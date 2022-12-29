@@ -1,4 +1,4 @@
-# Finance-game-in-C-
+# Finance-game-in-C++
 Per chi non lo sapesse il C++ è un linguaggio di programmazione ad alto livello a oggetti. È stato sviluppato a partire dal linguaggio di programmazione C infatti a livello di sintassi sono simili ma uno sfrutta la programmazione orientata agli oggetti.
 
 Il C++ è un linguaggio molto potente ed è utilizzato in molte applicazioni come OS, i browser, i giochi e addirittura in campi elettronici ecc... È un linguaggio molto conosciuto perchè offre un alto livello di controllo e prestazioni elevate.
