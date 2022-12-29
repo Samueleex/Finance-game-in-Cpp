@@ -1,0 +1,72 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+  // Impostare la funzione rand()
+  srand(time(0));
+
+  // budget dell'utente a 1000
+  int budget = 1000;
+
+  // prezzo delle azioni di Ethical Hacking Forum a 100
+  int price = 100;
+
+  // azioni possedute dall'utente a 0
+  int shares = 0;
+
+  // Ciclo del gioco
+  while (true)
+  {
+    // Visualizza il budget attuale e il prezzo delle azioni
+    cout << "Budget: €" << budget << endl;
+    cout << "Prezzo azioni Ethical Hacking Forum: €" << price << endl;
+
+    // Chiedi all'utente se vuole acquistare o vendere azioni
+    cout << "Vuoi acquistare (A) o vendere (V) azioni? (E per uscire)" << endl;
+    char choice;
+    cin >> choice;
+
+    // Se l'utente vuole uscire, interrompi il ciclo
+    if (choice == 'E')
+    {
+      break;
+    }
+
+    // Chiedi all'utente quante azioni vuole acquistare o vendere
+    cout << "Quante azioni vuoi " << (choice == 'A' ? "acquistare" : "vendere") << "?" << endl;
+    int numShares;
+    cin >> numShares;
+
+    // Calcola il costo totale delle azioni
+    int cost = price * numShares;
+
+    // Se l'utente vuole acquistare azioni e ha abbastanza soldi, aggiorna il budget e il numero di azioni possedute
+    if (choice == 'A' && budget >= cost)
+    {
+      budget -= cost;
+      shares += numShares;
+    }
+    // se l'utente vuole vendere azioni e ne possiede abbastanza, aggiorna il budget e il numero di azioni possedute
+    else if (choice == 'V' && shares >= numShares)
+    {
+      budget += cost;
+      shares -= numShares;
+    }
+    // se l'utente non può permettersi di acquistare o non possiede abbastanza azioni per vendere, visualizza un messaggio di errore
+    else
+{
+cout << "Azione non valida." << endl;
+}
+// Genera un nuovo prezzo delle azioni di Ethical Hacking Forum casualmente
+price = rand() % 200 + 50;
+}
+
+// Visualizza il budget finale dell'utente
+cout << "Il tuo budget finale è di €" << budget << "." << endl;
+
+return 0;
+}
